@@ -1,0 +1,15 @@
+{
+  "name": "p-contacts-cli-tool",
+  "version": "1.0.0",
+  "description": "",
+  "pcontacts": "p-contact.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^13.1.0"
+  }
+}
