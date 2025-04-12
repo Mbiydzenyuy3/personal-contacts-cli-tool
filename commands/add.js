@@ -1,8 +1,23 @@
 //add.js
-export default async function addContact({ name, phone, email, notes, tags }) {
-  await db.query(
-    "INSERT INTO contacts (name, phone, email, notes, tags) VALUES ($1, $2, $3, $4, $5)",
-    [name, phone, email, notes, tags]
-  );
-  console.log("Contact added!");
-}
+import { addContact } from "../services/contactServices.js";
+
+export default {
+  command: 'add',
+  describe: 'Add a new contact',
+  builder: {
+    name: { demandOption: true, type: 'string' },
+    phone: { demandOption: true, type: 'string' },
+    email: { type: 'string' },
+    notes: { type: 'string' },
+    tags: {
+      type: 'string',
+      describe: 'Comma-separated tags',
+    },
+  },
+  handler: async (argv) => {
+    const tagList = argv.tags ? argv.tags.split(',') : [];
+    await addContact({ ...argv, tags: tagList });
+    process.exit(0);
+  },
+};
+
