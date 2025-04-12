@@ -14,6 +14,9 @@ This is the Command-Line Contact Book tool
 
 The tool is completely accessable from the command line with the various commands allocated
 
-## HOW TO SET UP THIS TOOL
+## HOW TO SET UP THIS TOOL(DEPENDENCIES)
+- npm init 
+- npm install commander
+- npm install pg
 
 ## Tools use to build
